@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة المبيعات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>لوحة تحكم مدير المبيعات</h1>
+            <p>تتبع المبيعات، الإيرادات، والعملاء بسهولة</p>
+        </header>
+
+        <!-- بطاقات الإحصائيات -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>إجمالي الإيرادات</h3>
+                <p id="total-revenue">0 ج.م</p>
+            </div>
+            <div class="stat-card">
+                <h3>عدد العمليات</h3>
+                <p id="total-orders">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>القطع المباعة</h3>
+                <p id="total-items">0</p>
+            </div>
+        </section>
+
+        <!-- نموذج إضافة عملية بيع -->
+        <section class="form-section">
+            <h2>إضافة عملية بيع جديدة</h2>
+            <form id="sales-form">
+                <div class="input-group">
+                    <input type="text" id="customer-name" placeholder="اسم العميل" required>
+                    <input type="text" id="product-name" placeholder="اسم المنتج" required>
+                    <input type="number" id="quantity" placeholder="الكمية" min="1" required>
+                    <input type="number" id="price" placeholder="سعر الوحدة" min="1" step="0.01" required>
+                </div>
+                <button type="submit" class="btn-add">إضافة العملية</button>
+            </form>
+        </section>
+
+        <!-- جدول عرض المبيعات -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>سجل المبيعات</h2>
+                <input type="text" id="search-input" placeholder="بحث باسم العميل أو المنتج...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم العميل</th>
+                        <th>المنتج</th>
+                        <th>الكمية</th>
+                        <th>سعر الوحدة</th>
+                        <th>الإجمالي</th>
+                        <th>التاريخ</th>
+                        <th>إجراء</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-table-body">
+                    <!-- ستظهر البيانات هنا تلقائياً -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
